@@ -13,10 +13,11 @@ public class Kotik {
         catCount++;
     }
 
-    public Kotik(String name, int weight, int catSatiety) {
+    public Kotik(String name, int weight, int catSatiety, String meow) {
         this.name = name;
         this.weight = weight;
         this.catSatiety = catSatiety;
+        this.meow = meow;
         catCount++;
     }
 
@@ -52,6 +53,10 @@ public class Kotik {
         return meow;
     }
 
+    public void setMeow(String meow) {
+        this.meow = meow;
+    }
+
     private boolean isHungry() {
         return catSatiety <= 0;
     }
@@ -60,11 +65,9 @@ public class Kotik {
         if (!isHungry()) {
             catSatiety--;
             System.out.println("Я играю! :)");
-            meow += "Я играю! :)";
             return true;
         } else {
             System.out.println("Я хочу есть! :(");
-            meow += "Я хочу есть! :(";
             eat();
             return false;
         }
@@ -74,11 +77,9 @@ public class Kotik {
         if (!isHungry()) {
             catSatiety--;
             System.out.println("Я сплю! :)");
-            meow += "Я сплю! :)";
             return true;
         } else {
             System.out.println("Я хочу есть! :(");
-            meow += "Я хочу есть! :(";
             eat();
             return false;
         }
@@ -88,11 +89,9 @@ public class Kotik {
         if (!isHungry()) {
             catSatiety--;
             System.out.println("Я ловлю мышь! :)");
-            meow += "Я ловлю мышь! :)";
             return true;
         } else {
             System.out.println("Я хочу есть! :(");
-            meow += "Я хочу есть! :(";
             eat();
             return false;
         }
@@ -102,11 +101,9 @@ public class Kotik {
         if (!isHungry()) {
             catSatiety--;
             System.out.println("Я мурлыкаю! :)");
-            meow += "Я мурлыкаю! :)";
             return true;
         } else {
             System.out.println("Я хочу есть! :(");
-            meow += "Я хочу есть! :(";
             eat();
             return false;
         }
@@ -119,13 +116,11 @@ public class Kotik {
     private void eat(int catSatiety) {
         this.catSatiety += catSatiety;
         System.out.println("Я кушаю! :)");
-        meow += "Я кушаю! :)";
     }
 
     private void eat(int catSatiety, String foodName) {
         this.catSatiety += catSatiety;
         System.out.println("Я покушал " + foodName + "! :)");
-        meow += "Я покушал " + foodName + "! :)";
     }
 
     public void liveAnotherDay() {

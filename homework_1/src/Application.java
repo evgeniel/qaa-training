@@ -2,12 +2,13 @@ import model.Kotik;
 
 public class Application {
     public static void main(String[] args) {
-        Kotik kotik1 = new Kotik("Luna", 3, 5);
+        Kotik kotik1 = new Kotik("Luna", 3, 5, "Мяу");
         Kotik kotik2 = new Kotik();
 
         kotik2.setName("Polya");
         kotik2.setWeight(2);
         kotik2.setCatSatiety(3);
+        kotik2.setMeow("Мрр");
 
         System.out.println(kotik1);
         kotik1.liveAnotherDay();

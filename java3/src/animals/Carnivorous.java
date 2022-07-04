@@ -1,31 +1,27 @@
 package animals;
 
 import aviary.AviarySize;
+import exceptions.WrongFoodException;
 import food.Food;
+import food.Grass;
+import food.Meat;
 
 public class Carnivorous extends Animals {
-    private AviarySize aviarySize;
 
     public Carnivorous(String name) {
         super(name);
     }
 
     public Carnivorous(String name, AviarySize aviarySize) {
-        super(name);
-        this.aviarySize = aviarySize;
-    }
-
-    public AviarySize getAviarySize() {
-        return aviarySize;
-    }
-
-    public void setAviarySize(AviarySize aviarySize) {
-        this.aviarySize = aviarySize;
+        super(name, aviarySize);
     }
 
     @Override
-    public void eat(Food food) {
-        System.out.println("Только мясо!");
+    public void eat(Food food) throws WrongFoodException {
+        if (food instanceof Meat) {
+            System.out.println("Буду мясо!)");
+        }
+        if (food instanceof Grass) throw new WrongFoodException("Плотоядные не едят траву!");
     }
 
     @Override

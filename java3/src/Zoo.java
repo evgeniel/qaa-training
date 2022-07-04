@@ -2,15 +2,16 @@ import animals.*;
 import aviary.Aviary;
 import aviary.AviarySize;
 import exceptions.WrongAviaryException;
+import exceptions.WrongFoodException;
 import food.Grass;
 import food.Meat;
 
 public class Zoo {
-    public static void main(String[] args) throws WrongAviaryException {
-        Aviary aviaryCarnivorous = new Aviary(new Carnivorous("Хищник"));
+    public static void main(String[] args) throws WrongAviaryException, WrongFoodException {
+        Aviary aviaryCarnivorous = new Aviary(new Carnivorous("Хищники"));
         Aviary aviaryHerbivore = new Aviary(new Herbivore("Травоядные"));
 
-        Catfish catfish = new Catfish("Сомчик", AviarySize.MIDDLE);
+        Catfish catfish = new Catfish("Сомчик", AviarySize.SMALL);
         Cow cow = new Cow("Маруся", AviarySize.HUGE);
         Duck duck = new Duck("Дональд Дак", AviarySize.SMALL);
         Horse horse = new Horse("Мустанг", AviarySize.BIG);
@@ -21,14 +22,17 @@ public class Zoo {
         Grass grass = new Grass("Трава");
         Meat meat = new Meat("Мясо");
 
-        aviaryCarnivorous.add(catfish.getName(), catfish);
-        aviaryCarnivorous.add(lion.getName(), lion);
-        aviaryCarnivorous.add(lionSimba.getName(), lionSimba);
+        aviaryCarnivorous.add(cow.getName(), cow); //проверка того что, подходит ли вольер травоядному или плотоядному
 
-        aviaryCarnivorous.delete(catfish.getName(), catfish);
+        aviaryCarnivorous.add(catfish.getName(), catfish); //проверка того что, вмещается ли животное в вольер
+        aviaryCarnivorous.add(lion.getName(), lion); //добавление животного в вольер
+        aviaryCarnivorous.add(lionSimba.getName(), lionSimba); //проверка того что, вмещается ли животное в вольер
 
-        aviaryHerbivore.add(cow.getName(), cow);
-        aviaryHerbivore.add(horse.getName(), horse);
+        aviaryCarnivorous.delete(catfish.getName(), catfish); //удаление животного из вольера
+
+        aviaryHerbivore.add(cow.getName(), cow); //добавление животного в вольер
+        aviaryHerbivore.add(horse.getName(), horse); //проверка того что, вмещается ли животное в вольер
+        aviaryHerbivore.add(duck.getName(), duck); //добавление животного в вольер
 
         System.out.println(aviaryCarnivorous.getAviary());
         System.out.println(aviaryCarnivorous.getAnimal(lion.getName()));
@@ -36,44 +40,7 @@ public class Zoo {
 
         Worker worker = new Worker();
 
-        catfish.swim();
-        catfish.eat(grass);
-        worker.feed(catfish, meat);
-        System.out.println(catfish);
-
-        cow.run();
-        cow.eat(grass);
-        worker.feed(catfish, meat);
-        worker.getVoice(cow);
-        System.out.println(cow);
-
-        duck.fly();
-        duck.run();
-        duck.swim();
-        duck.eat(meat);
-        worker.getVoice(duck);
-        System.out.println(duck);
-
-        horse.run();
-        horse.voice();
-        horse.eat(grass);
-        worker.feed(horse, meat);
-        System.out.println(horse);
-
-        lion.run();
-        worker.feed(lion, grass);
-        worker.getVoice(lion);
-        System.out.println(lion);
-
-        tiger.run();
-        tiger.swim();
-        tiger.eat(meat);
-        worker.getVoice(tiger);
-        System.out.println(tiger);
-
-        Swim[] pond = {catfish, duck, tiger};
-        for (Swim i : pond) {
-            i.swim();
-        }
+        worker.feed(catfish, grass); //проверка того что, ест ли плотоядный траву
+        catfish.eat(grass); //корм животного
     }
 }

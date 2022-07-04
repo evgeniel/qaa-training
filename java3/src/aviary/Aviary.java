@@ -1,8 +1,6 @@
 package aviary;
 
-import animals.Animals;
-import animals.Carnivorous;
-import animals.Herbivore;
+import animals.*;
 import exceptions.WrongAviaryException;
 
 import java.util.HashMap;
@@ -25,14 +23,73 @@ public class Aviary<A extends Animals> {
         return nameAviary;
     }
 
-    public void add(String name, Animals animals) {
-        if (animals instanceof Carnivorous) {
-            new WrongAviaryException("Плотоядный не вмещается в вальер!", ((Carnivorous) animals).getAviarySize(), animals);
-            aviary.put(name, animals);
-        }
-        if (animals instanceof Herbivore) {
-            new WrongAviaryException("Травоядный не вмещается в вальер!", ((Herbivore) animals).getAviarySize(), animals);
-            aviary.put(name, animals);
+    public void add(String name, Animals animals) throws WrongAviaryException {
+        if (animals instanceof Carnivorous && nameAviary.getName().equals("Травоядные"))
+            throw new WrongAviaryException("Плотоядный не должен быть в вальере травоядного!");
+        if (animals instanceof Herbivore && nameAviary.getName().equals("Хищники"))
+            throw new WrongAviaryException("Травоядный не должен быть в вальере плотоядного!");
+
+        switch (animals.getAviarySize()) {
+            case SMALL:
+                if (animals instanceof Catfish) throw new WrongAviaryException("Сом не вмещается в вальер!");
+                if (animals instanceof Cow) throw new WrongAviaryException("Корова не вмещается в вальер!");
+                if (animals instanceof Duck) {
+                    return;
+                }
+                if (animals instanceof Horse) throw new WrongAviaryException("Лошадь не вмещается в вальер!");
+                if (animals instanceof Lion) throw new WrongAviaryException("Лев не вмещается в вальер!");
+                if (animals instanceof Tiger) throw new WrongAviaryException("Тигр не вмещается в вальер!");
+                break;
+            case MIDDLE:
+                if (animals instanceof Catfish) {
+                    return;
+                }
+                if (animals instanceof Cow) throw new WrongAviaryException("Корова не вмещается в вальер!");
+                if (animals instanceof Duck) {
+                    return;
+                }
+                if (animals instanceof Horse) throw new WrongAviaryException("Лошадь не вмещается в вальер!");
+                if (animals instanceof Lion) throw new WrongAviaryException("Лев не вмещается в вальер!");
+                if (animals instanceof Tiger) {
+                    return;
+                }
+                break;
+            case BIG:
+                if (animals instanceof Catfish) {
+                    return;
+                }
+                if (animals instanceof Cow) throw new WrongAviaryException("Корова не вмещается в вальер!");
+                if (animals instanceof Duck) {
+                    return;
+                }
+                if (animals instanceof Horse) throw new WrongAviaryException("Лошадь не вмещается в вальер!");
+                if (animals instanceof Lion) {
+                    return;
+                }
+                if (animals instanceof Tiger) {
+                    return;
+                }
+                break;
+            case HUGE:
+                if (animals instanceof Catfish) {
+                    return;
+                }
+                if (animals instanceof Cow) {
+                    return;
+                }
+                if (animals instanceof Duck) {
+                    return;
+                }
+                if (animals instanceof Horse) {
+                    return;
+                }
+                if (animals instanceof Lion) {
+                    return;
+                }
+                if (animals instanceof Tiger) {
+                    return;
+                }
+                break;
         }
     }
 

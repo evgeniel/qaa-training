@@ -1,13 +1,21 @@
 package animals;
 
+import aviary.AviarySize;
+import exceptions.WrongFoodException;
 import food.Food;
 
 public abstract class Animals {
     private String name;
     private int satiety;
+    private AviarySize aviarySize;
 
     public Animals(String name) {
         this.name = name;
+    }
+
+    public Animals(String name, AviarySize aviarySize) {
+        this.name = name;
+        this.aviarySize = aviarySize;
     }
 
     public String getName() {
@@ -26,7 +34,15 @@ public abstract class Animals {
         this.satiety = satiety;
     }
 
-    public abstract void eat(Food food);
+    public AviarySize getAviarySize() {
+        return aviarySize;
+    }
+
+    public void setAviarySize(AviarySize aviarySize) {
+        this.aviarySize = aviarySize;
+    }
+
+    public abstract void eat(Food food) throws WrongFoodException;
 
     @Override
     public String toString() {

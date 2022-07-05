@@ -22,25 +22,21 @@ public class Zoo {
         Grass grass = new Grass("Трава");
         Meat meat = new Meat("Мясо");
 
-        aviaryCarnivorous.add(cow.getName(), cow); //проверка того что, подходит ли вольер травоядному или плотоядному
+        //aviaryCarnivorous.add(cow.getName(), cow); //проверка того что, подходит ли вольер травоядному или плотоядному
 
-        aviaryCarnivorous.add(catfish.getName(), catfish); //проверка того что, вмещается ли животное в вольер
+        //aviaryCarnivorous.add(catfish.getName(), catfish); //проверка того что, вмещается ли животное в вольер
+
         aviaryCarnivorous.add(lion.getName(), lion); //добавление животного в вольер
-        aviaryCarnivorous.add(lionSimba.getName(), lionSimba); //проверка того что, вмещается ли животное в вольер
-
-        aviaryCarnivorous.delete(catfish.getName(), catfish); //удаление животного из вольера
-
-        aviaryHerbivore.add(cow.getName(), cow); //добавление животного в вольер
-        aviaryHerbivore.add(horse.getName(), horse); //проверка того что, вмещается ли животное в вольер
-        aviaryHerbivore.add(duck.getName(), duck); //добавление животного в вольер
-
+        aviaryCarnivorous.add(tiger.getName(), tiger); //добавление животного в вольер
         System.out.println(aviaryCarnivorous.getAviary());
-        System.out.println(aviaryCarnivorous.getAnimal(lion.getName()));
-        System.out.println(aviaryHerbivore.getAviary());
+        aviaryCarnivorous.delete(lion.getName(), lion); //удаление животного из вольера
+        System.out.println(aviaryCarnivorous.getAviary());
 
         Worker worker = new Worker();
 
-        worker.feed(catfish, grass); //проверка того что, ест ли плотоядный траву
-        catfish.eat(grass); //корм животного
+        //worker.feed(catfish, grass); //проверка того что, ест ли плотоядный траву
+        System.out.println(catfish.getSatiety());
+        catfish.eat(meat); //корм животного*/
+        System.out.println(catfish.getSatiety());
     }
 }

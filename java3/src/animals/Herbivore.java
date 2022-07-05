@@ -21,6 +21,7 @@ public class Herbivore extends Animals {
         if (food instanceof Meat) throw new WrongFoodException("Травоядные не едят мясо!");
         if (food instanceof Grass) {
             System.out.println("Буду травку!)");
+            setSatiety(1);
         }
     }
 

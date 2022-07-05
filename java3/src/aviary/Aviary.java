@@ -34,6 +34,7 @@ public class Aviary<A extends Animals> {
                 if (animals instanceof Catfish) throw new WrongAviaryException("Сом не вмещается в вальер!");
                 if (animals instanceof Cow) throw new WrongAviaryException("Корова не вмещается в вальер!");
                 if (animals instanceof Duck) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Horse) throw new WrongAviaryException("Лошадь не вмещается в вальер!");
@@ -42,51 +43,64 @@ public class Aviary<A extends Animals> {
                 break;
             case MIDDLE:
                 if (animals instanceof Catfish) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Cow) throw new WrongAviaryException("Корова не вмещается в вальер!");
                 if (animals instanceof Duck) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Horse) throw new WrongAviaryException("Лошадь не вмещается в вальер!");
                 if (animals instanceof Lion) throw new WrongAviaryException("Лев не вмещается в вальер!");
                 if (animals instanceof Tiger) {
+                    aviary.put(name, animals);
                     return;
                 }
                 break;
             case BIG:
                 if (animals instanceof Catfish) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Cow) throw new WrongAviaryException("Корова не вмещается в вальер!");
                 if (animals instanceof Duck) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Horse) throw new WrongAviaryException("Лошадь не вмещается в вальер!");
                 if (animals instanceof Lion) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Tiger) {
+                    aviary.put(name, animals);
                     return;
                 }
                 break;
             case HUGE:
                 if (animals instanceof Catfish) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Cow) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Duck) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Horse) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Lion) {
+                    aviary.put(name, animals);
                     return;
                 }
                 if (animals instanceof Tiger) {
+                    aviary.put(name, animals);
                     return;
                 }
                 break;

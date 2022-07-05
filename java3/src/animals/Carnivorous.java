@@ -20,6 +20,7 @@ public class Carnivorous extends Animals {
     public void eat(Food food) throws WrongFoodException {
         if (food instanceof Meat) {
             System.out.println("Буду мясо!)");
+            setSatiety(1);
         }
         if (food instanceof Grass) throw new WrongFoodException("Плотоядные не едят траву!");
     }

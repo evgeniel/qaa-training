@@ -3,6 +3,7 @@ package animals;
 import aviary.AviarySize;
 
 public class Lion extends Carnivorous implements Run, Voice {
+
     public Lion(String name, AviarySize aviarySize) {
         super(name, aviarySize);
     }

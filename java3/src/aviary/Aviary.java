@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Aviary<A extends Animals> {
+
     private final Map<String, Animals> aviary;
     private final A nameAviary;
 

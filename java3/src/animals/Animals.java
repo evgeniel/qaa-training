@@ -5,6 +5,7 @@ import exceptions.WrongFoodException;
 import food.Food;
 
 public abstract class Animals {
+
     private String name;
     private int satiety;
     private AviarySize aviarySize;

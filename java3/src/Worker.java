@@ -6,6 +6,7 @@ import exceptions.WrongFoodException;
 import food.Food;
 
 public class Worker {
+
     public void feed(Animals animals, Food food) throws WrongFoodException {
         animals.eat(food);
     }

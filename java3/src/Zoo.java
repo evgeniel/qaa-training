@@ -7,6 +7,7 @@ import food.Grass;
 import food.Meat;
 
 public class Zoo {
+
     public static void main(String[] args) throws WrongAviaryException, WrongFoodException {
         Aviary aviaryCarnivorous = new Aviary(new Carnivorous("Хищники"));
         Aviary aviaryHerbivore = new Aviary(new Herbivore("Травоядные"));
@@ -35,8 +36,8 @@ public class Zoo {
         Worker worker = new Worker();
 
         //worker.feed(catfish, grass); //проверка того что, ест ли плотоядный траву
-        System.out.println(catfish.getSatiety());
+        System.out.println("Сытость до кормления: " + catfish.getSatiety());
         catfish.eat(meat); //корм животного*/
-        System.out.println(catfish.getSatiety());
+        System.out.println("Сытость после кормления: "  + catfish.getSatiety());
     }
 }

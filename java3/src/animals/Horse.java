@@ -3,6 +3,7 @@ package animals;
 import aviary.AviarySize;
 
 public class Horse extends Herbivore implements Run, Voice {
+
     public Horse(String name, AviarySize aviarySize) {
         super(name, aviarySize);
     }

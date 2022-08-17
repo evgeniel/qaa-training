@@ -1,6 +1,7 @@
 import calculator.Calculator;
 import exceptions.InvalidNumericExpression;
 import exceptions.ZeroException;
+import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,6 +11,8 @@ import static org.testng.Assert.assertEquals;
 /**
  * Набор тестов для проверки функционала клькулятора с DataProvider
  */
+@Epic("Calculator")
+@Feature("Calculator with DataProvider test")
 public class CalculatorWithDataProviderTest {
 
     /**
@@ -62,6 +65,10 @@ public class CalculatorWithDataProviderTest {
      * @param expected ожидаемый результат из DataProvider
      */
     @Test(dataProvider = "getTestAndExpectedData")
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Тесты с DataProvider")
+    @Description("Тест сложения, вычитания, деления, умножения чисел")
     public void testOperation(String str, String expected) {
         calculator.setNumericExpression(str);
         calculator.performOperation();
@@ -74,6 +81,10 @@ public class CalculatorWithDataProviderTest {
      * @param str тестовые данные из DataProvider
      */
     @Test(dataProvider = "getTestInvalidNumericExpressionData", expectedExceptions = InvalidNumericExpression.class)
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Тесты с DataProvider")
+    @Description("Тест исключения в случае неверного ввода выражения")
     public void testInvalidNumericExpression(String str) {
         calculator.setNumericExpression(str);
     }
@@ -82,6 +93,10 @@ public class CalculatorWithDataProviderTest {
      * Проверка исключение в случае деления на ноль
      */
     @Test(expectedExceptions = ZeroException.class)
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Тесты с DataProvider")
+    @Description("Тест исключение в случае деления на ноль")
     public void testZeroException() {
         String str = "10 / 0";
         calculator.setNumericExpression(str);

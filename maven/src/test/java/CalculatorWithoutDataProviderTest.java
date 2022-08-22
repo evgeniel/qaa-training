@@ -1,6 +1,7 @@
 import calculator.Calculator;
 import exceptions.InvalidNumericExpression;
 import exceptions.ZeroException;
+import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -11,6 +12,8 @@ import static org.testng.Assert.assertEquals;
 /**
  * Набор тестов для проверки функционала клькулятора без DataProvider
  */
+@Epic("Calculator")
+@Feature("Calculator without DataProvider test")
 public class CalculatorWithoutDataProviderTest {
 
     /**
@@ -30,6 +33,10 @@ public class CalculatorWithoutDataProviderTest {
      * Позитивная проверка сложения двух чисел
      */
     @Test
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Тесты без DataProvider")
+    @Description("Тест сложения двух чисел")
     public void testAddition() {
         String str = "5 + 5";
         calculator.setNumericExpression(str);
@@ -41,6 +48,10 @@ public class CalculatorWithoutDataProviderTest {
      * Позитивная проверка вычитания одного числа другим
      */
     @Test
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Тесты без DataProvider")
+    @Description("Тест вычитания одного числа другим")
     public void testSubtraction() {
         String str = "10 - 5";
         calculator.setNumericExpression(str);
@@ -52,6 +63,10 @@ public class CalculatorWithoutDataProviderTest {
      * Позитивная проверка деления одного числа на другое
      */
     @Test
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Тесты без DataProvider")
+    @Description("Тест деления одного числа на другое")
     public void testDivision() {
         String str = "10 / 5";
         calculator.setNumericExpression(str);
@@ -63,6 +78,10 @@ public class CalculatorWithoutDataProviderTest {
      * Позитивная проверка умножения двух чисел
      */
     @Test
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Тесты без DataProvider")
+    @Description("Тест умножения двух чисел")
     public void testMultiplication() {
         String str = "10 * 10";
         calculator.setNumericExpression(str);
@@ -74,6 +93,10 @@ public class CalculatorWithoutDataProviderTest {
      * Проверка исключения в случае неверного ввода выражения
      */
     @Test(expectedExceptions = InvalidNumericExpression.class)
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Тесты без DataProvider")
+    @Description("Тест исключения в случае неверного ввода выражения")
     public void testInvalidNumericExpression() {
         ArrayList<String> arrayStr = new ArrayList<String>();
         arrayStr.add("пять плюс пять");
@@ -90,6 +113,10 @@ public class CalculatorWithoutDataProviderTest {
      * Проверка исключение в случае деления на ноль
      */
     @Test(expectedExceptions = ZeroException.class)
+    @Owner(value = "Васияров Евгений Владимирович")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Тесты без DataProvider")
+    @Description("Тест исключение в случае деления на ноль")
     public void testZeroException() {
         String str = "10 / 0";
         calculator.setNumericExpression(str);

@@ -1,3 +1,7 @@
 /.idea/
 /out/
 /maven/target/
+/maven/.allure/
+/gradle/.gradle/
+/gradle/build/
+/.gradle/

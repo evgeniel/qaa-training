@@ -29,8 +29,13 @@ public class AvitoTest extends BaseTest {
     public void avitoTest() {
         //получение доступа к методам класса AvitoPage для взаимодействия с элементами страницы
         new AvitoPage(driver).selectingCategoryOfficeEquipment()
-                .inputPinter(config.inputSearch()).activationCheckboxOnlyWithPhoto()
-                .openingListRegions().regionEntry(config.regionInputField()).adsButtonClick()
-                .selectionSortListExpensive().valuePriceFirstFiveItems(5);
+                .inputPinter(config.inputSearch())
+                .activationCheckboxOnlyWithPhoto()
+                .openingListRegions()
+                .regionEntry(config.regionInputField())
+                .adsButtonClick()
+                .selectionSortListExpensive()
+                .valuePriceFirstFiveItems(5);
     }
 }
+

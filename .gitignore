@@ -5,5 +5,5 @@
 /gradle/.gradle/
 /gradle/build/
 /.gradle/
-/selenium/target/
-/selenium/.allure/
+/selenium_gradle/.gradle/
+/selenium_gradle/build/

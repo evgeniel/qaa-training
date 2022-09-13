@@ -14,3 +14,4 @@ public interface BaseConfig extends Config {
 
     String driverProperty();
 }
+

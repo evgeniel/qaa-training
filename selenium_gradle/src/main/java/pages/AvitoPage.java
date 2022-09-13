@@ -171,8 +171,8 @@ public class AvitoPage {
     @Step("Вывод в консоль Значение цены первых 5 товаров")
     public void valuePriceFirstFiveItems(int count) {
         for (int i = 1; i <= count; i++) {
-            waitUntilVisible(driver, getItemPriceElementByNumber(i));
             System.out.println("Цена " + i + " товара: " + getItemPriceElementByNumber(i).getAttribute("content"));
         }
     }
 }
+

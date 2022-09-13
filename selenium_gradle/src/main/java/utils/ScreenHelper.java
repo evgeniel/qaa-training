@@ -32,3 +32,4 @@ public class ScreenHelper {
         return buffer.toByteArray();
     }
 }
+

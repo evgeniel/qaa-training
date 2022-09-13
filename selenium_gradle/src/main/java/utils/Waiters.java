@@ -22,3 +22,4 @@ public class Waiters {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(element));
     }
 }
+

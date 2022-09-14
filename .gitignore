@@ -5,3 +5,5 @@
 /gradle/.gradle/
 /gradle/build/
 /.gradle/
+/selenium_gradle/.gradle/
+/selenium_gradle/build/

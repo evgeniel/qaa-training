@@ -7,3 +7,5 @@
 /.gradle/
 /selenium_gradle/.gradle/
 /selenium_gradle/build/
+/rest_assured/.gradle/
+/rest_assured/build/

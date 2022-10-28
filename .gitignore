@@ -9,3 +9,5 @@
 /selenium_gradle/build/
 /rest_assured/.gradle/
 /rest_assured/build/
+/cucumber/build/
+/cucumber/.gradle/

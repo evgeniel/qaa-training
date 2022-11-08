@@ -9,3 +9,6 @@
 /selenium_gradle/build/
 /rest_assured/.gradle/
 /rest_assured/build/
+/JDBC/target/
+/cucumber/build/
+/cucumber/.gradle/
